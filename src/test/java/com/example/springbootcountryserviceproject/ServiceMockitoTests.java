@@ -3,11 +3,12 @@ package com.example.springbootcountryserviceproject;
 import com.example.springbootcountryserviceproject.beans.Country;
 import com.example.springbootcountryserviceproject.repositories.CountryRepository;
 import com.example.springbootcountryserviceproject.services.CountryService;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +16,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest(classes = {ServiceMakitoTests.class})
-public class ServiceMakitoTests {
+
+@SpringBootTest(classes = {ServiceMockitoTests.class})
+public class ServiceMockitoTests {
 
     @Mock
     CountryRepository countryRepo;
@@ -27,7 +29,7 @@ public class ServiceMakitoTests {
     public List<Country> mycountries;
 
     @Test
-    @Order(1)
+    //@Order(1)
     public void test_getAllCountries(){
 
         List<Country> mycountries = new ArrayList<>();
